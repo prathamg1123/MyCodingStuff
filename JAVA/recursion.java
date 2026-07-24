@@ -79,6 +79,6 @@ public class recursion {
     }
 
     public static int arrf(int n) throws Exception{
-        return null;
+        return -1;
     }
 }

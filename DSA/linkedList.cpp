@@ -1,6 +1,6 @@
 #include <iostream>
 using namespace std;
-
+//Linked list 
 class Node{
 public:
     int data; 
@@ -111,22 +111,83 @@ public:
         }
         cout << "NULL" << endl;
     }
+
+    Node* reverse(){
+        Node* prev = NULL;
+        Node* curr = head;
+        Node* next = NULL;
+
+        while(curr != NULL){
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+        return head = prev;
+    }
+
+    Node* middleNode(){
+        Node* slow = head;
+        Node* fast = head;
+        while(fast != NULL && fast->next != NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+        }
+        return slow;
+    }
+
+    Node* CycleDetect(){
+        Node* slow = head;
+        Node* fast = head;
+        bool isCycle = false;
+        while(fast != NULL && fast->next != NULL){
+            slow = slow->next;
+            fast = fast->next->next;
+            if(slow == fast){
+                isCycle = true;
+                break;
+            }
+        }    
+        if(!isCycle) return NULL;
+        slow = head;
+        while(slow != fast){
+            slow = slow->next;
+            fast = fast->next;
+        }
+        return slow;
+    }
+
+    // void print1() {
+    //     Node *temp = head;
+    //     while(temp != NULL){
+    //         cout << temp->data;
+    //         temp = temp->next;
+    //     }
+    // }
 };
 int main()
 {
     List ll;
     ll.push_front(1);
     ll.push_front(2);
+    ll.push_front(3);
     ll.push_front(4);
 
-    ll.insert(3, 1);
-   // ll.print();
+    //ll.insert(9, 2);
 
-    cout << ll.search(1);
+    // ll.insert(3, 1);
+   // ll.print();
+    ll.push_front(5);
+    // cout << ll.search(1);
     // ll.pop_front();
     // ll.pop_back();
     // 
-  
+    // Node* tempe = ll.middleNode();
+    // cout << tempe->data<<"\n";
+    Node* tt = ll.CycleDetect();
+    cout << tt->data;
+    // ll.print();
+
 
     return 0;
 }

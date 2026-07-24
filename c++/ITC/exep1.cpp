@@ -1,3 +1,5 @@
+//Name:- Pratham Bairagi
+//Enrollment:- 24100BTCSE17813
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -13,7 +15,5 @@ int main()
         cout << "Probability = " << p << " Entopy = "<< it <<endl;  
     }
     cout << "The all Entropy= " << sum << endl;
-    cout<< "Nakshatra chalisgaonkar";
-    cout << "24100BTCSE17780";
     return 0;
 }

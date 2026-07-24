@@ -1,3 +1,5 @@
+//Name:- Pratham Bairagi
+//Enrollment:- 24100BTCSE17813
 #include<iostream>
 #include<string>
 #include<cmath>
@@ -31,7 +33,5 @@ int main() {
 	for(int i=0; i<sizeof(inputs)/sizeof(string); i++) {
 		calcEntropy (inputs[i]);
 	}
-	cout<<"Piyush Yadav"<<endl;
-	cout<<"24100BTCSE17802"<<endl;
 	return 0;
 }
